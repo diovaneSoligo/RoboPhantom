@@ -19,11 +19,11 @@ import postgresDB.Conexao;
 
 public class RoboPhantom {
 /******************************************************************************/    
-    static class ArmazenaDadosPhanton implements Runnable{
+    static class ArmazenaDadosPhantom implements Runnable{
         
         Socket cliente;
 
-        public ArmazenaDadosPhanton(Socket cliente) {
+        public ArmazenaDadosPhantom(Socket cliente) {
             this.cliente = cliente;
         }
        
@@ -225,7 +225,7 @@ public class RoboPhantom {
         
         while(true){
             Socket cliente = servidor.accept();
-            ArmazenaDadosPhanton Phanton = new ArmazenaDadosPhanton(cliente);
+            ArmazenaDadosPhantom Phanton = new ArmazenaDadosPhantom(cliente);
             new Thread(Phanton).start();
         }
     }
